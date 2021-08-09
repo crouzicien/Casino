@@ -4,12 +4,7 @@
 
 Jeux de casino en angular2+
 
-[![Alt text](relative/path/to/img.jpg?raw=true "Title")](assets/screen1.png?raw=true "Casino")
-
-
-## Pour commencer
-
-Entrez ici les instructions pour bien débuter avec votre projet...
+![Alt text](assets/screen2.png)
 
 ### Pré-requis
 
