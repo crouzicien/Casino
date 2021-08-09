@@ -9,7 +9,6 @@ Jeux de casino en angular2+
 ### Pré-requis
 
 - Npm
-- Angular
 
 ### Installation
 
