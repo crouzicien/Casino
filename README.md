@@ -4,6 +4,9 @@
 
 Jeux de casino en angular2+
 
+[![Alt text](relative/path/to/img.jpg?raw=true "Title")](assets/screen1.png?raw=true "Casino")
+
+
 ## Pour commencer
 
 Entrez ici les instructions pour bien débuter avec votre projet...
@@ -25,8 +28,8 @@ Executez la commande ``npm run start`` pour démarrer le projet sur le port 4200
 
 ## Fabriqué avec
 
-* [Angular](https://angular.io/) - Framework Font
 * [VSCode](https://code.visualstudio.com/) - Editeur de textes
+* [Angular](https://angular.io/) - Framework Font
 
 ## Versions
 
