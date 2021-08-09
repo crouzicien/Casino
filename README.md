@@ -1,27 +1,44 @@
-# CasinoAngular
+# Casino
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-## Development server
+Jeux de casino en angular2+
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Pour commencer
 
-## Code scaffolding
+Entrez ici les instructions pour bien débuter avec votre projet...
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Pré-requis
 
-## Build
+- Npm
+- Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Installation
 
-## Running unit tests
+Executez la commande ``npm i`` pour installer les dépendances
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ensuite vous pouvez montrer ce que vous obtenez au final...
 
-## Running end-to-end tests
+## Démarrage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Executez la commande ``npm run start`` pour démarrer le projet sur le port 4200
 
-## Further help
+## Fabriqué avec
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [Angular](https://angular.io/) - Framework Font
+* [VSCode](https://code.visualstudio.com/) - Editeur de textes
+
+## Versions
+
+**Dernière version stable :** 1.0.0
+
+**Dernière version :** 1.0.0
+
+Liste des versions : [Cliquer pour afficher](https://github.com/crouzicien/Casino/tags)
+
+## Auteurs
+* **Sanfilippo Sylvain** _alias_ [@crouzicien](https://github.com/crouzicien)
+
+## License
+Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+
