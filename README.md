@@ -15,8 +15,6 @@ Jeux de casino en angular2+
 
 Executez la commande ``npm i`` pour installer les dépendances
 
-Ensuite vous pouvez montrer ce que vous obtenez au final...
-
 ## Démarrage
 
 Executez la commande ``npm run start`` pour démarrer le projet sur le port 4200
