@@ -1,0 +1,24 @@
+<div class="this">
+    <div class="button shine" (click)="spin()">Appuyez</div>
+
+    <div class="results">
+        <div class="result" *ngFor="let item of bonus.currentList">
+            <div class="titre">{{item.label}}</div>
+            <div class="qte">{{item.nmb}}</div>
+        </div>
+    </div>
+    <div class="container-plateau">
+        <div class="case shine" *ngFor="let case of bonus.plateau" [ngStyle]="{background: case.color}"
+            [ngClass]="{cligne: case.cligne}">
+            <div class="titre">{{case.label}}</div>
+        </div>
+    </div>
+    <div class="container-plateau-gost">
+        <img #pion class="pion pose1 slideInRight" src="assets/decors/licorneSkate.gif" alt="">
+
+    </div>
+    
+
+    <img class="licorne" src="assets/decors/licorne.gif" alt="">
+
+</div>

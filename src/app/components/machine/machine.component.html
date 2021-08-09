@@ -1,0 +1,90 @@
+<div class="this">
+  <div class="background"></div>
+  <img src="assets/decors/confety.gif" alt="" class="decors decors3">
+  <img src="assets/decors/cloud.gif" alt="" class="decors decors1">
+  <img src="assets/decors/licorne.gif" alt="" class="decors decors2">
+  <img src="assets/decors/star.gif" alt="" class="decors decors4">
+  <img src="assets/decors/star.gif" alt="" class="decors decors5">
+  <img src="assets/decors/star.gif" alt="" class="decors decors6">
+  <img src="assets/decors/star.gif" alt="" class="decors decors7">
+
+
+
+
+  <div class="zone-colonnes">
+    <div class="lineNmb lineNmbL">50 LINES</div>
+
+    <div #colonne class="colonne "   *ngFor="let item of colonnes">
+
+      <audio #soundFinColonne>
+        <source src="assets/sons/fin roulette.mp3" type="audio/mpeg">
+      </audio>
+      <audio #soundEnflammeColonne>
+        <source src="assets/sons/fantastique/2738.mp3" type="audio/mpeg">
+      </audio>
+      <audio #soundBonus>
+        <source src="assets/sons/fantastique/2838.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="case" *ngFor="let case of item.liste" [ngClass]="{caseWin: case.win}">
+
+        <img  src="{{'assets/vignette/'+ case.photo()}}" alt="" [ngClass]="{
+                        borderYellow: case.label == 'portraitFemme',
+                        borderRed: case.label == 'portraitVolcan',
+                        zoom: case.label == 'pieceBonus' || case.label == 'planetPrice',
+                        pulse: case.win || case.cligne
+
+                    }">
+        <!-- <div class="text" *ngIf="case.label == 'planetPrice'">${{case.value()| money}}</div> -->
+        <div class="textWild shine" *ngIf="case.label == 'portraitVolcan'" [ngClass]="{pulse: case.win}">WILD</div>
+      </div>
+    </div>
+    <div class="lineNmb lineNmbR">50 LINES</div>
+  </div>
+
+  <div class="titre shine">
+    LE CASINO
+    <div class="attache attache1"></div>
+    <div class="attache attache2"></div>
+  </div>
+
+  <div class="zone-joueur">
+    <div class="sommeGagne">
+      <div class="somme" *ngIf="gains != null" [appRollsMoney]="gains">${{gains}}</div>
+
+      <div class="win shine">WIN</div>
+      <div class="detail">{{detailGains}}</div>
+    </div>
+
+    <div class="spinButton shine" (click)='start()' [ngClass]="{locked: spinButton.locked}">SPIN!</div>
+    <audio #soundSpinButton>
+      <source src="assets/sons/button.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="betMinus" [ngClass]="{locked: spinButton.locked, locked: bet.current == bet.liste[0]}"
+      (click)="bet.minus()">-
+    </div>
+    <div class="bet">
+      <div class="somme shine">{{bet.current*10000 | money}}</div>
+      <div class="win">TOTAL BET</div>
+    </div>
+    <div class="betPlus" [ngClass]="{locked: spinButton.locked, locked: bet.current == bet.liste[bet.liste.length-1]}"
+      (click)="bet.plus()">+</div>
+  </div>
+
+  <div class="portes">
+      <div #porte class="porteL"></div>
+      <div #porte class="porteR"></div>
+  </div>
+
+  <div class="affichageGeant fadeIn" *ngIf="affichageGeant.text != null">
+    <div class="label shine zoomIn">{{affichageGeant.text}}</div>
+  </div> 
+  <app-jeu-de-lois class="fadeInTop" *ngIf="pieceBonus.inProgress" (end)="pieceBonus.endJeuDeLois($event)"></app-jeu-de-lois>
+  <!-- <app-multi-spins ></app-multi-spins> -->
+</div>
+
+
+<audio #soundMusique>
+  <source src="assets/sons/musique.mp3" type="audio/mpeg">
+</audio>

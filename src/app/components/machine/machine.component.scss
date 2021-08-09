@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+
+$jaune : rgb(240, 206, 56);
+
+$main : rgb(142, 109, 196);
+$mainFonce : rgb(102, 68, 141);
+$second : rgb(162, 145, 223);
+$third : rgb(68, 73, 141);
+$board : rgb(35, 37, 85);
+$boardFonce : rgb(57, 60, 139);
+
+
+.this {
+    font-size: 1vw;
+    overflow: hidden;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+    background-image: url('/assets/decors/back2.jpg');
+    background-size: contain;
+}
+
+.shine{
+    color: white;
+    text-shadow: 0 0px 20px rgb(243, 218, 109);
+}
+
+.decors{}
+.decors1{
+    position: absolute;
+    top: 0vw;
+    left: 5vw;
+    width: 12vw;
+    transform: rotateZ(20deg);
+}
+.decors2{
+    position: absolute;
+    top: 23vw;
+    right: 0vw;
+    width: 20vw;
+    z-index: 9;
+}
+.decors3{
+    position: absolute;
+    top: 6vw;
+    left: 4vw;
+    width: 8vw;
+    transform: rotateZ(20deg);
+}
+.decors4{
+    position: absolute;
+    top: 5vw;
+    right: 20vw;
+    width: 6vw;
+    height: 6vw;
+    transform: rotateZ(-20deg);
+}
+.decors5{
+    position: absolute;
+    top: 9vw;
+    left: 20vw;
+    width: 6vw;
+    height: 6vw;
+    transform: rotateZ(80deg);
+}
+.decors6{
+    position: absolute;
+    top: 32vw;
+    left: 21vw;
+    width: 6vw;
+    height: 6vw;
+    transform: rotateZ(130deg);
+}
+.decors7{
+    position: absolute;
+    top: 33vw;
+    right: 21vw;
+    width: 6vw;
+    height: 6vw;
+    transform: rotateZ(-60deg);
+}
+
+
+
+.titre {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 2vw;
+    height: 5vw;
+    line-height: 5.5vw;
+    text-align: center;
+    font-size: 3.5vw;
+    background: $boardFonce;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
+    .attache {
+        height: 0.7vw;
+        width: 0.5vw;
+        background: rgb(95, 95, 95);
+        position: absolute;
+        top: 5vw;
+
+    }
+
+    .attache1 {
+        left: 20%;
+    }
+
+    .attache2 {
+        right: 20%;
+    }
+}
+
+.zone-colonnes {
+    position: absolute;
+    top: 7.65vw;
+    left: 25%;
+    width: 50%;
+    height: auto;
+    padding: 0.2vw;
+    background: $second;
+    border: 1.3vw solid $main;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    // overflow: hidden;
+    .colonne {
+        position: relative;
+        width: 20%;
+        height: 28vw;
+        box-sizing: border-box;
+        float: left;
+        animation-duration: 0.3s;
+        box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.4) inset;
+        transition: 1s;
+
+        .case {
+            height: 33.333%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-sizing: border-box;
+            border: 3px solid transparent;
+            animation-name: rotate;
+            animation-delay: 0s;
+            animation-timing-function: linear;
+            animation-duration: 0.05s;
+
+            img {
+                box-sizing: border-box;
+                width: 60%;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                z-index: 9;
+                transition: 1s;
+            }
+            .bonus{
+                transform: scale(1.2) !important;
+                z-index: 9;
+                // width: 100%;
+            }
+            .text {
+                position: absolute;
+                left: 0;
+                right: 0;
+                line-height: 3vw;
+                height: 3vw;
+                font-size: 2vw;
+                text-align: center;
+                color: $third;
+                // transform: rotateX(180deg);
+                z-index: 10;
+            }
+
+            .textWild {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -0.5vw;
+                font-size: 2.5vw;
+                text-align: center;
+                // color: rgb(255, 255, 255);
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                z-index: 10;
+            }
+
+        }
+
+        .caseWin {
+            border-color: rgb(255, 174, 0) !important;
+            background: rgb(255, 174, 0) !important;
+        }
+        .borderYellow {
+            border: 3px solid rgba(248, 248, 248, 0.288);
+            background: rgba(248, 248, 248, 0.288);
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .borderRed {
+            border: 3px solid rgba(248, 248, 248, 0.288);
+            background: rgba(248, 248, 248, 0.288);
+
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .borderGreen {
+            border: 3px solid rgb(170, 119, 42);
+            background: rgba(248, 248, 248, 0.288);
+
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .zoom {
+            box-sizing: border-box;
+            width: 105% !important;
+        }
+
+    }
+    .enflamme{
+        box-shadow: 0px 0px 30px 15px rgb(255, 255, 255) inset !important;
+        background: rgba(243, 218, 109, 0.568);
+        transform: scale(1.2);
+    }
+
+
+    .lineNmb {
+        position: absolute;
+        top: 40%;
+        width: 3.7vw;
+        height: 5vw;
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        background: $main;
+        padding-top: 1vw;
+        box-sizing: border-box;
+        color: $mainFonce;
+        text-align: center;
+    }
+
+    .lineNmbR {
+        right: -4.7vw;
+        border-radius: 0 0.3vw 0.3vw 0;
+        box-shadow: 10px 0px 8px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .lineNmbL {
+        left: -4.7vw;
+        border-radius: 0.3vw 0 0 0.3vw;
+        box-shadow: -10px 0px 8px -1px rgba(0, 0, 0, 0.4);
+    }
+    
+    @keyframes rotate {
+        0%{
+            transform: translate3d(0, -7vw, 0);
+        }
+
+        100%{
+            transform: translate3d(0, 0, 0);
+        }
+
+    }
+    
+    .stop{
+        animation: stop 0.15s 0s 1;
+    }
+
+    @keyframes stop {
+        0%, 100%{
+            top: 0
+        }
+        50%{
+            top: 3.5vw;
+        }
+
+    }
+
+}
+
+
+.zone-joueur {
+    position: absolute;
+    background: $board;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 39.25vw;
+    z-index: 19;
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.6);
+
+    .spinButton {
+        position: absolute;
+        top: 3vw;
+        right: 10%;
+        height: 5vw;
+        width: 18vw;
+        color: white;
+        font-size: 3.5vw;
+        background: rgb(65, 212, 102);
+        border: 0.8vw solid rgba(34, 185, 97, 0.95);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+        border-radius: 0.3vw;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .spinButton:hover {
+        filter: brightness(110%);
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .spinButton:active,
+    .locked {
+        filter: brightness(55%) !important;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .sommeGagne {
+        position: absolute;
+        top: 2vw;
+        left: 35%;
+        right: 35%;
+        height: 8.5vw;
+        background: $boardFonce;
+        border-radius: 0.3vw;
+        box-shadow: -1px 2px 20px 5px rgba(0, 0, 0, 0.3) inset;
+        text-align: center;
+        padding-top: 1vw;
+        box-sizing: border-box;
+
+        .somme {
+            position: absolute;
+            top: 0;left: 0;right: 0;
+            font-size: 4vw;
+            color: $jaune;
+
+        }
+        .win {
+            position: absolute;
+            top: 5vw;left: 0;right: 0;
+            color: white;
+            font-size: 1.2vw;
+        }
+        .detail{
+            position: absolute;
+            top: 6.75vw; left: 0;right: 0;
+            letter-spacing: 0.05vw;
+            font-weight: 400;
+            color: $board;
+        }
+
+
+    }
+
+    .betMinus,
+    .betPlus {
+        position: absolute;
+        left: 23%;
+        top: 3vw;
+        background: rgb(85, 191, 233);
+        text-align: center;
+        line-height: 5vw;
+        width: 5vw;
+        height: 5vw;
+        font-size: 5vw;
+        font-weight: 500;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+        border-radius: 0.3vw;
+        color: white;
+        border: 0.8vw solid rgb(52, 157, 199);
+        text-align: center;
+        cursor: pointer;
+
+    }
+
+    .betMinus {
+        left: 5%;
+    }
+
+    .betMinus:hover,
+    .betPlus:hover {
+        filter: brightness(110%);
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .betMinus:active,
+    .betPlus:active,
+    .locked {
+        filter: brightness(55%) !important;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6) !important;
+    }
+
+
+    .bet {
+        position: absolute;
+        top: 2vw;
+        left: 12.8%;
+        width: 9vw;
+        height: 8.5vw;
+        background: $boardFonce;
+        border-radius: 0.3vw;
+        box-shadow: -1px 2px 20px 5px rgba(0, 0, 0, 0.3) inset;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 1vw;
+
+        .somme {
+            font-size: 3vw;
+            color: white;
+
+        }
+
+        .win {
+            position: relative;
+            bottom: 1vw;
+            color: $jaune;
+            font-size: 1.7vw;
+        }
+    }
+}
+
+
+.portes{
+    .porteL, .porteR{
+        position: absolute;
+        z-index: 100;
+        top: 0;height: 39.25vw;
+        width: 50%;
+        background: $third;
+        transition: 1s;
+        transition-timing-function:ease-in-out;
+        transform: translate3d(0,0,0);
+    }
+    .porteL{
+        left: 0;
+        // box-shadow: 2px 0 10px 3px rgba(29, 29, 29, 0.349);
+    }
+    .porteR{
+        right: 0;
+        // box-shadow: -2px 0 10px 3px rgba(29, 29, 29, 0.349);
+    }
+}
+
+
+.affichageGeant{
+    position: absolute;
+    top: 0;right: 0;left: 0;height: 39.25vw;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 15vw;
+    z-index: 98;
+    animation-duration: 0.5s;
+    padding: 5% 20% 0 20%;
+    line-height: 15vw;
+    box-sizing: border-box;
+
+    .label{
+        animation-duration: 0.5s;
+    }
+}
+
+
+app-jeu-de-lois, app-multi-spins{
+    z-index: 99;
+    position: absolute;
+    top: 0;right: 0;left: 0;height:  39.25vw;
+    animation-duration: 1s;
+    background-image: url('/assets/decors/back2.jpg');
+    background-size: contain;
+}
+

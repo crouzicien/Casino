@@ -1,0 +1,273 @@
+$jaune : rgb(240, 206, 56);
+
+$main : rgb(142, 109, 196);
+$mainFonce : rgb(102, 68, 141);
+$second : rgb(162, 145, 223);
+$third : rgb(68, 73, 141);
+$board : rgb(35, 37, 85);
+$boardFonce : rgb(57, 60, 139);
+
+
+
+.this{
+    font-size: 1vw;
+}
+.shine{
+    color: white;
+    text-shadow: 0 0px 20px rgb(243, 218, 109);
+}
+
+.container-plateau{
+    position: absolute;
+    padding: 2vw;
+    top: 6vw;
+    left: 40vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0.7vw;
+    grid-row-gap: 0.7vw;
+    .case{
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        width: 13vw;
+        height: 8vw;
+        text-align: center;
+        font-size: 1.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.4);
+        padding: 0 4vw;
+        box-sizing: border-box;
+        transform: skewX(-20deg);
+        border: 3px solid rgba(255, 255, 255, 0.144);
+
+        .titre{
+            // transform: skewX(25deg);
+            letter-spacing: 0.1vw;
+        }
+    }
+
+    .case:nth-child(1) {
+        grid-column-start: 4;
+        grid-column-end: 5; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 7vw;
+        bottom: 2vw;
+      }
+    .case:nth-child(2) {
+        grid-column-start: 3;
+        grid-column-end: 4; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 7vw;
+        bottom: 2vw;
+      }
+    .case:nth-child(3) {
+        grid-column-start: 2;
+        grid-column-end: 3; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 7vw;
+        bottom: 2vw;
+      }
+    .case:nth-child(4) {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        border-radius: 0 0 0 3vw;
+        bottom: 2vw;
+        right: 7vw;
+      }
+    .case:nth-child(5) {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 2;
+        grid-row-end: 3; 
+        right: 4vw;
+        bottom: 2.2vw;
+        height: 10vw;
+        // margin: 1vw 0 ;
+        box-shadow: 15px 15px 10px 5px rgba(0, 0, 0, 0.4);
+      }
+    .case:nth-child(6) {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+        border-radius: 3vw 0 0 0 ;
+      }
+    .case:nth-child(7) {
+        grid-column-start: 2;
+        grid-column-end: 3; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+      }
+    .case:nth-child(8) {
+        grid-column-start: 3;
+        grid-column-end: 4; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+      }
+    .case:nth-child(9) {
+        grid-column-start: 4;
+        grid-column-end: 5; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+      }
+
+}
+.container-plateau-gost{
+    position: absolute;
+    padding: 2vw;
+    top: 6vw;
+    left: 40vw;
+    height: 31.5vw;
+    width: 54vw;
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0.7vw;
+    grid-row-gap: 0.7vw;
+    .pion{
+        position: relative;
+        transition: 0.8s;
+        
+    }
+    .pose1 {
+        grid-column-start: 4;
+        grid-column-end: 5; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 5vw;
+        bottom: 7vw;
+        animation-duration: 1s;
+      }
+    .pose2 {
+        grid-column-start: 3;
+        grid-column-end: 4; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 5vw;
+        bottom: 7vw;
+        animation-duration: 1s;
+      }
+      .pose3 {
+        grid-column-start: 2;
+        grid-column-end: 3; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        right: 5vw;
+        bottom: 7vw;
+        animation-duration: 1s;
+      }
+      .pose4 {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        border-radius: 0 0 0 3vw;
+        bottom: 7vw;
+        right: 5vw;
+        animation-duration: 1s;
+      }
+      .pose5 {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 2;
+        grid-row-end: 3; 
+        right: 4.5vw;
+        bottom: 2vw;
+        margin: 1vw 0 ;
+        transform: rotateY(180deg);
+      }
+      .pose6 {
+        grid-column-start: 1;
+        grid-column-end: 2; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+        border-radius: 3vw 0 0 0 ;
+        transform: rotateY(180deg);
+      }
+      .pose7 {
+        grid-column-start: 2;
+        grid-column-end: 3; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+        transform: rotateY(180deg);
+
+      }
+      .pose8 {
+        grid-column-start: 3;
+        grid-column-end: 4; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+        transform: rotateY(180deg);
+
+      }
+      .pose9 {
+        grid-column-start: 4;
+        grid-column-end: 5; 
+        grid-row-start: 1;
+        grid-row-end: 2; 
+        transform: rotateY(180deg);
+
+      }
+
+}
+
+
+.licorne{
+    position: absolute;
+    top: 14.5vw;
+    right: 32vw;
+    width: 17vw;
+    transform: rotateY(180deg);
+}
+.pion{
+    width: 8vw;
+    z-index: 3;
+}
+.bulle{
+    position: absolute;
+    top: 14.5vw;
+    right: 15vw;
+    width: 17vw;
+    background: whi;    
+}
+.button {
+    position: absolute;
+    top: 28vw;
+    left: 6vw;
+    height: 5vw;
+    width: 18vw;
+    color: white;
+    font-size: 3.5vw;
+    background: rgba(84, 164, 218, 0.95);
+    border: 0.8vw solid rgba(34, 125, 185, 0.95);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 0.3vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: brightness(110%);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.6);
+}
+
+.button:active,
+.locked {
+    filter: brightness(55%) !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6) !important;
+}
+
+.cligne{
+    filter: brightness(140%);
+    border-color: white !important;
+}

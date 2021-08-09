@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+
+$jaune : rgb(240, 206, 56);
+
+$main : rgb(142, 109, 196);
+$mainFonce : rgb(102, 68, 141);
+$second : rgb(162, 145, 223);
+$third : rgb(68, 73, 141);
+$board : rgb(35, 37, 85);
+$boardFonce : rgb(57, 60, 139);
+
+
+.this{
+    font-size: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.shine{
+    color: white;
+    text-shadow: 0 0px 20px rgb(243, 218, 109);
+}
+.zone-colonnes {
+    position: relative;
+    width: 26%;
+    height: auto;
+    padding: 0.2vw;
+    background: $second;
+    border: 1.3vw solid $main;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 1vw 3vw;
+    .colonne {
+        position: relative;
+        width: 20%;
+        height: 14vw;
+        box-sizing: border-box;
+        float: left;
+        animation-duration: 0.3s;
+        box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.4) inset;
+        transition: 1s;
+
+        .case {
+            height: 33.333%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-sizing: border-box;
+            border: 3px solid transparent;
+            animation-name: rotate;
+            animation-delay: 0s;
+            animation-timing-function: linear;
+            animation-duration: 0.05s;
+
+            img {
+                box-sizing: border-box;
+                width: 60%;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                z-index: 9;
+                transition: 1s;
+            }
+            .bonus{
+                transform: scale(1.2) !important;
+                z-index: 9;
+                // width: 100%;
+            }
+            .text {
+                position: absolute;
+                left: 0;
+                right: 0;
+                line-height: 3vw;
+                height: 3vw;
+                font-size: 2vw;
+                text-align: center;
+                color: $third;
+                // transform: rotateX(180deg);
+                z-index: 10;
+            }
+
+            .textWild {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -0.5vw;
+                font-size: 1.7vw;
+                text-align: center;
+                // color: rgb(255, 255, 255);
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                z-index: 10;
+            }
+
+        }
+
+        .caseWin {
+            border-color: rgb(255, 174, 0) !important;
+            background: rgb(255, 174, 0) !important;
+        }
+        .borderYellow {
+            border: 3px solid rgba(248, 248, 248, 0.288);
+            background: rgba(248, 248, 248, 0.288);
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .borderRed {
+            border: 3px solid rgba(248, 248, 248, 0.288);
+            background: rgba(248, 248, 248, 0.288);
+
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .borderGreen {
+            border: 3px solid rgb(170, 119, 42);
+            background: rgba(248, 248, 248, 0.288);
+
+            box-sizing: border-box;
+            height: 99% !important;
+            width: 99% !important;
+        }
+
+        .zoom {
+            box-sizing: border-box;
+            width: 105% !important;
+        }
+
+    }
+    .enflamme{
+        box-shadow: 0px 0px 30px 15px rgb(255, 255, 255) inset !important;
+        background: rgba(243, 218, 109, 0.568);
+        transform: scale(1.2);
+    }
+
+
+    .lineNmb {
+        position: absolute;
+        top: 40%;
+        width: 3.7vw;
+        height: 5vw;
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        background: $main;
+        padding-top: 1vw;
+        box-sizing: border-box;
+        color: $mainFonce;
+        text-align: center;
+    }
+
+    .lineNmbR {
+        right: -4.7vw;
+        border-radius: 0 0.3vw 0.3vw 0;
+        box-shadow: 10px 0px 8px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .lineNmbL {
+        left: -4.7vw;
+        border-radius: 0.3vw 0 0 0.3vw;
+        box-shadow: -10px 0px 8px -1px rgba(0, 0, 0, 0.4);
+    }
+    
+    @keyframes rotate {
+        0%{
+            transform: translate3d(0, -7vw, 0);
+        }
+
+        100%{
+            transform: translate3d(0, 0, 0);
+        }
+
+    }
+    
+    .stop{
+        animation: stop 0.15s 0s 1;
+    }
+
+    @keyframes stop {
+        0%, 100%{
+            top: 0
+        }
+        50%{
+            top: 3.5vw;
+        }
+
+    }
+
+}

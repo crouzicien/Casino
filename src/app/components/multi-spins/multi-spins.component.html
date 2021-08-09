@@ -1,0 +1,31 @@
+<div class="this">
+  <div class="zone-colonnes" *ngFor="let jeu of jeux">
+    <div class="lineNmb lineNmbL">50 LINES</div>
+
+    <div #colonne class="colonne " *ngFor="let item of jeu.colonnes">
+
+      <audio #soundFinColonne>
+        <source src="assets/sons/fin roulette.mp3" type="audio/mpeg">
+      </audio>
+      <audio #soundEnflammeColonne>
+        <source src="assets/sons/fantastique/2738.mp3" type="audio/mpeg">
+      </audio>
+      <audio #soundBonus>
+        <source src="assets/sons/fantastique/2838.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="case" *ngFor="let case of item.liste" [ngClass]="{caseWin: case.win}">
+
+        <img src="{{'assets/vignette/'+ case.photo()}}" alt="" [ngClass]="{
+                        borderYellow: case.label == 'portraitFemme',
+                        borderRed: case.label == 'portraitVolcan',
+                        zoom: case.label == 'pieceBonus' || case.label == 'planetPrice',
+                        pulse: case.win || case.cligne
+
+                    }">
+        <div class="textWild shine" *ngIf="case.label == 'portraitVolcan'" [ngClass]="{pulse: case.win}">WILD</div>
+      </div>
+    </div>
+    <div class="lineNmb lineNmbR">50 LINES</div>
+  </div>
+</div>
